@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>隱私權政策 · Privacy Policy — 台日地震監測</title>
-<meta name="description" content="台日地震監測 App 的隱私權政策。Privacy Policy for Taiwan-Japan Earthquake Monitor.">
+<title>隱私權政策 · プライバシーポリシー — 台日地震監測</title>
+<meta name="description" content="台日地震監測 App 的隱私權政策。台日地震監視アプリのプライバシーポリシー。">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+JP:wght@500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -25,6 +25,8 @@
     --warning: #ff8a4c;
     --serif-zh: 'Noto Serif TC', serif;
     --sans-zh: 'Noto Sans TC', sans-serif;
+    --serif-ja: 'Noto Serif JP', serif;
+    --sans-ja: 'Noto Sans JP', sans-serif;
     --serif-en: 'Fraunces', serif;
     --mono: 'JetBrains Mono', monospace;
   }
@@ -43,6 +45,10 @@
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  body[data-lang="ja"] {
+    font-family: var(--sans-ja);
   }
 
   /* Texture overlay */
@@ -92,15 +98,22 @@
     letter-spacing: -0.01em;
   }
 
-  h1 .en {
+  body[data-lang="ja"] h1 {
+    font-family: var(--serif-ja);
+  }
+
+  h1 .alt {
     display: block;
-    font-family: var(--serif-en);
-    font-style: italic;
-    font-weight: 300;
+    font-family: var(--serif-ja);
+    font-weight: 500;
     font-size: 0.55em;
     color: var(--text-mute);
     margin-top: 8px;
     letter-spacing: 0;
+  }
+
+  body[data-lang="ja"] h1 .alt {
+    font-family: var(--serif-zh);
   }
 
   .meta {
@@ -145,14 +158,17 @@
     background: transparent;
     border: none;
     color: var(--text-mute);
-    font-family: var(--serif-en);
-    font-style: italic;
+    font-family: var(--sans-zh);
     font-size: 13px;
     padding: 8px 18px;
     border-radius: 999px;
     cursor: pointer;
     transition: all 0.2s;
     font-weight: 500;
+  }
+
+  .lang-toggle button[data-lang="ja"] {
+    font-family: var(--sans-ja);
   }
 
   .lang-toggle button.active {
@@ -172,6 +188,10 @@
 
   article.active {
     display: block;
+  }
+
+  article[lang="ja"] {
+    font-family: var(--sans-ja);
   }
 
   section {
@@ -198,10 +218,9 @@
     letter-spacing: -0.005em;
   }
 
-  article[lang="en"] h2 {
-    font-family: var(--serif-en);
-    font-weight: 500;
-    letter-spacing: -0.015em;
+  article[lang="ja"] h2 {
+    font-family: var(--serif-ja);
+    font-weight: 700;
   }
 
   h3 {
@@ -212,9 +231,8 @@
     color: var(--text);
   }
 
-  article[lang="en"] h3 {
-    font-family: var(--serif-en);
-    font-weight: 500;
+  article[lang="ja"] h3 {
+    font-family: var(--serif-ja);
   }
 
   p {
@@ -251,10 +269,9 @@
     font-family: var(--serif-zh);
   }
 
-  article[lang="en"] ul li strong {
-    font-family: var(--serif-en);
-    font-style: italic;
-    font-weight: 500;
+  article[lang="ja"] ul li strong {
+    font-family: var(--serif-ja);
+    font-weight: 700;
   }
 
   a {
@@ -285,9 +302,8 @@
     font-weight: 700;
   }
 
-  article[lang="en"] .callout strong {
-    font-family: var(--serif-en);
-    font-style: italic;
+  article[lang="ja"] .callout strong {
+    font-family: var(--serif-ja);
     font-weight: 700;
   }
 
@@ -394,33 +410,33 @@
     body { background: white; color: black; }
     .lang-toggle { display: none; }
     article { display: block !important; }
-    article#en { page-break-before: always; }
+    article#ja { page-break-before: always; }
   }
 </style>
 </head>
-<body>
+<body data-lang="zh-Hant">
 
 <div class="page">
 
   <header>
     <div class="eyebrow">Legal Document</div>
     <h1>
-      隱私權政策
-      <span class="en">Privacy Policy</span>
+      <span class="primary-title">隱私權政策</span>
+      <span class="alt" id="altTitle">プライバシーポリシー</span>
     </h1>
     <div class="meta">
       <div class="meta-item">
         <span class="meta-label">Application</span>
-        <span class="meta-value">台日地震監測 / Taiwan-Japan Earthquake Monitor</span>
+        <span class="meta-value">台日地震監測 / 台日地震監視</span>
       </div>
       <div class="meta-item">
         <span class="meta-label">Last Updated</span>
-        <span class="meta-value" id="lastUpdated">2026年4月27日</span>
+        <span class="meta-value">2026年4月27日</span>
       </div>
     </div>
     <div class="lang-toggle" role="tablist">
       <button class="active" data-lang="zh-Hant">繁體中文</button>
-      <button data-lang="en">English</button>
+      <button data-lang="ja">日本語</button>
     </div>
   </header>
 
@@ -430,12 +446,12 @@
   <article lang="zh-Hant" class="active">
 
     <section>
-      <span class="section-num">§ 簡介 / Introduction</span>
+      <span class="section-num">§ 簡介</span>
       <h2>關於本政策</h2>
-      <p>感謝您使用「台日地震監測」（以下簡稱「本 App」）。本政策說明本 App 在您使用過程中如何收集、使用、儲存與保護您的資料。</p>
-      <p>本 App 為地震資訊推播服務，主要功能為提供台灣與日本地區的地震速報、震度資訊與推播通知。我們重視您的隱私權，並致力於以最低限度收集必要資訊以提供服務。</p>
+      <p>感謝您使用「台日地震監測」(以下簡稱「本 App」)。本政策說明本 App 在您使用過程中如何收集、使用、儲存與保護您的資料。</p>
+      <p>本 App 為地震資訊推播服務,主要功能為提供台灣與日本地區的地震速報、震度資訊與推播通知。我們重視您的隱私權,並致力於以最低限度收集必要資訊以提供服務。</p>
       <div class="callout">
-        <strong>重點摘要：</strong>本 App 不要求您建立帳號、不收集您的姓名、電話或電子郵件，僅在功能必要範圍內處理少量技術性資料（如裝置推播 Token、廣告識別碼）。
+        <strong>重點摘要:</strong>本 App 不要求您建立帳號、不收集您的姓名、電話或電子郵件,僅在功能必要範圍內處理少量技術性資料(如裝置推播 Token、廣告識別碼)。
       </div>
     </section>
 
@@ -452,17 +468,17 @@
           <tr>
             <td>裝置推播 Token<br><code>APNs Token</code></td>
             <td>傳送地震推播通知</td>
-            <td>可（關閉通知）</td>
+            <td>可(關閉通知)</td>
           </tr>
           <tr>
             <td>廣告識別碼<br><code>IDFA</code></td>
             <td>提供個人化廣告</td>
-            <td>可（拒絕 ATT）</td>
+            <td>可(拒絕 ATT)</td>
           </tr>
           <tr>
             <td>裝置型號 / 系統版本</td>
             <td>診斷與相容性</td>
-            <td>否（系統提供）</td>
+            <td>否(系統提供)</td>
           </tr>
           <tr>
             <td>App 版本</td>
@@ -474,15 +490,15 @@
 
       <h3>1.2 您主動提供的設定</h3>
       <ul>
-        <li><strong>通知地區：</strong>您於 App 內設定的地震通知接收地區（例如「台北市」、「東京都」），儲存於您的裝置與我們的推播伺服器。</li>
-        <li><strong>通知門檻：</strong>您設定的最低震度通知條件（例如「3 級以上才通知」）。</li>
-        <li><strong>App 內偏好設定：</strong>例如語言、暗色模式等，僅儲存於本機（不上傳）。</li>
+        <li><strong>通知地區:</strong>您於 App 內設定的地震通知接收地區(例如「台北市」、「東京都」),儲存於您的裝置與我們的推播伺服器。</li>
+        <li><strong>通知門檻:</strong>您設定的最低震度通知條件(例如「3 級以上才通知」)。</li>
+        <li><strong>App 內偏好設定:</strong>例如語言、暗色模式等,僅儲存於本機(不上傳)。</li>
       </ul>
 
       <h3>1.3 我們不收集的資訊</h3>
       <ul>
         <li>姓名、電話號碼、電子郵件地址</li>
-        <li>精確的 GPS 位置（本 App 不使用定位服務）</li>
+        <li>精確的 GPS 位置(本 App 不使用定位服務)</li>
         <li>聯絡人、相簿、相機、麥克風</li>
         <li>瀏覽記錄或其他 App 的使用情況</li>
       </ul>
@@ -491,38 +507,38 @@
     <section>
       <span class="section-num">§ 02</span>
       <h2>資訊用途</h2>
-      <p>我們僅在以下目的範圍內使用收集的資料：</p>
+      <p>我們僅在以下目的範圍內使用收集的資料:</p>
       <ul>
-        <li><strong>提供地震推播：</strong>根據您的地區與門檻設定，傳送相關地震速報。</li>
-        <li><strong>顯示廣告：</strong>透過 Google AdMob 顯示廣告以維持本 App 免費營運。</li>
-        <li><strong>改善服務：</strong>分析整體使用統計（匿名化）以改善功能。</li>
-        <li><strong>故障診斷：</strong>當推播或功能異常時，技術日誌協助我們修復問題。</li>
+        <li><strong>提供地震推播:</strong>根據您的地區與門檻設定,傳送相關地震速報。</li>
+        <li><strong>顯示廣告:</strong>透過 Google AdMob 顯示廣告以維持本 App 免費營運。</li>
+        <li><strong>改善服務:</strong>分析整體使用統計(匿名化)以改善功能。</li>
+        <li><strong>故障診斷:</strong>當推播或功能異常時,技術日誌協助我們修復問題。</li>
       </ul>
-      <p>我們<strong>不會</strong>將您的資料出售予第三方、不會用於與服務無關的行銷，亦不會與其他資料庫交叉比對識別您的身份。</p>
+      <p>我們<strong>不會</strong>將您的資料出售予第三方、不會用於與服務無關的行銷,亦不會與其他資料庫交叉比對識別您的身份。</p>
     </section>
 
     <section>
       <span class="section-num">§ 03</span>
       <h2>第三方服務</h2>
-      <p>為提供完整服務，本 App 使用以下第三方服務，各服務均有其獨立的隱私權政策：</p>
+      <p>為提供完整服務,本 App 使用以下第三方服務,各服務均有其獨立的隱私權政策:</p>
 
       <h3>3.1 推播與基礎設施</h3>
       <ul>
-        <li><strong>Apple Push Notification Service（APNs）：</strong>傳送推播通知。<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 隱私權政策</a></li>
-        <li><strong>Cloudflare Workers：</strong>本 App 的推播伺服器與設定服務。<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare 隱私權政策</a></li>
+        <li><strong>Apple Push Notification Service(APNs):</strong>傳送推播通知。<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 隱私權政策</a></li>
+        <li><strong>Cloudflare Workers:</strong>本 App 的推播伺服器與設定服務。<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare 隱私權政策</a></li>
       </ul>
 
       <h3>3.2 廣告</h3>
       <ul>
-        <li><strong>Google AdMob：</strong>顯示橫幅廣告。AdMob 可能依您的 ATT 同意狀態使用 IDFA 等資料投放廣告。<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隱私權政策</a></li>
+        <li><strong>Google AdMob:</strong>顯示橫幅廣告。AdMob 可能依您的 ATT 同意狀態使用 IDFA 等資料投放廣告。<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隱私權政策</a></li>
       </ul>
 
-      <h3>3.3 地震資料來源（公開資料，不涉及個資）</h3>
+      <h3>3.3 地震資料來源(公開資料,不涉及個資)</h3>
       <ul>
-        <li><strong>中央氣象署（CWA）：</strong>台灣地震資料</li>
-        <li><strong>気象庁（JMA）：</strong>日本地震資料</li>
-        <li><strong>P2P 地震情報：</strong>日本即時地震速報</li>
-        <li><strong>USGS：</strong>美國地質調查局全球地震資料</li>
+        <li><strong>中央氣象署(CWA):</strong>台灣地震資料</li>
+        <li><strong>気象庁(JMA):</strong>日本地震資料</li>
+        <li><strong>P2P 地震情報:</strong>日本即時地震速報</li>
+        <li><strong>USGS:</strong>美國地質調查局全球地震資料</li>
       </ul>
     </section>
 
@@ -530,187 +546,187 @@
       <span class="section-num">§ 04</span>
       <h2>資料儲存與保留</h2>
       <ul>
-        <li><strong>推播 Token：</strong>儲存於 Cloudflare KV 資料庫，於您解除安裝 App 或關閉通知後，於 30 天內自動清除。</li>
-        <li><strong>App 內設定：</strong>儲存於您裝置本機，不離開您的裝置；解除安裝即清除。</li>
-        <li><strong>廣告快取：</strong>由 Google AdMob 管理，遵循其資料保留規範。</li>
+        <li><strong>推播 Token:</strong>儲存於 Cloudflare KV 資料庫,於您解除安裝 App 或關閉通知後,於 30 天內自動清除。</li>
+        <li><strong>App 內設定:</strong>儲存於您裝置本機,不離開您的裝置;解除安裝即清除。</li>
+        <li><strong>廣告快取:</strong>由 Google AdMob 管理,遵循其資料保留規範。</li>
       </ul>
     </section>
 
     <section>
       <span class="section-num">§ 05</span>
       <h2>兒童隱私</h2>
-      <p>本 App 不會主動向 13 歲以下兒童收集個人資料。本 App 設計為一般大眾使用之資訊類 App，不包含特別針對兒童的內容。若監護人發現有疑慮，請透過下方聯絡方式與我們聯繫。</p>
+      <p>本 App 不會主動向 13 歲以下兒童收集個人資料。本 App 設計為一般大眾使用之資訊類 App,不包含特別針對兒童的內容。若監護人發現有疑慮,請透過下方聯絡方式與我們聯繫。</p>
     </section>
 
     <section>
       <span class="section-num">§ 06</span>
       <h2>您的權利</h2>
       <ul>
-        <li><strong>拒絕廣告追蹤：</strong>於 iOS 設定中關閉本 App 的「允許追蹤」開關，AdMob 將改為投放非個人化廣告。</li>
-        <li><strong>關閉推播通知：</strong>於 iOS 設定中關閉本 App 的通知，您的推播 Token 將於 30 天內自動失效。</li>
-        <li><strong>移除所有資料：</strong>解除安裝本 App 即可清除所有本機儲存的設定與快取。</li>
-        <li><strong>查詢與刪除請求：</strong>若您希望查詢或刪除我們儲存的資料，請透過下方信箱聯絡我們，我們將於 30 日內回覆。</li>
+        <li><strong>拒絕廣告追蹤:</strong>於 iOS 設定中關閉本 App 的「允許追蹤」開關,AdMob 將改為投放非個人化廣告。</li>
+        <li><strong>關閉推播通知:</strong>於 iOS 設定中關閉本 App 的通知,您的推播 Token 將於 30 天內自動失效。</li>
+        <li><strong>移除所有資料:</strong>解除安裝本 App 即可清除所有本機儲存的設定與快取。</li>
+        <li><strong>查詢與刪除請求:</strong>若您希望查詢或刪除我們儲存的資料,請透過下方信箱聯絡我們,我們將於 30 日內回覆。</li>
       </ul>
     </section>
 
     <section>
       <span class="section-num">§ 07</span>
       <h2>政策變更</h2>
-      <p>當本政策有重大變更時，我們將於本頁面公告，並更新「最後更新日期」。建議您定期查閱本頁面以了解最新內容。重大變更（如新增資料收集類型）將於 App 內以顯著方式通知。</p>
+      <p>當本政策有重大變更時,我們將於本頁面公告,並更新「最後更新日期」。建議您定期查閱本頁面以了解最新內容。重大變更(如新增資料收集類型)將於 App 內以顯著方式通知。</p>
     </section>
 
     <section>
       <span class="section-num">§ 08</span>
       <h2>聯絡我們</h2>
-      <p>若您對本政策、資料處理、或您的權利有任何疑問，歡迎透過以下方式聯繫：</p>
+      <p>若您對本政策、資料處理、或您的權利有任何疑問,歡迎透過以下方式聯繫:</p>
       <ul>
-        <li><strong>電子郵件：</strong><a href="mailto:[請填寫您的聯絡信箱]">[請填寫您的聯絡信箱]</a></li>
+        <li><strong>電子郵件:</strong><a href="mailto:[請填寫您的聯絡信箱]">[請填寫您的聯絡信箱]</a></li>
       </ul>
     </section>
 
   </article>
 
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- English Version -->
+  <!-- 日本語版 -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <article lang="en">
+  <article lang="ja">
 
     <section>
-      <span class="section-num">§ Introduction</span>
-      <h2>About This Policy</h2>
-      <p>Thank you for using <em>Taiwan-Japan Earthquake Monitor</em> (hereinafter "the App"). This policy explains how we collect, use, store, and protect your data when you use the App.</p>
-      <p>The App is an earthquake notification service providing real-time alerts and intensity information for Taiwan and Japan. We respect your privacy and are committed to collecting only the minimum data necessary to deliver our service.</p>
+      <span class="section-num">§ はじめに</span>
+      <h2>本ポリシーについて</h2>
+      <p>「台日地震監視」(以下「本アプリ」)をご利用いただき、誠にありがとうございます。本ポリシーでは、本アプリのご利用にあたり、お客様のデータをどのように収集・使用・保管・保護するかについてご説明いたします。</p>
+      <p>本アプリは地震情報の通知サービスであり、台湾および日本地域の地震速報、震度情報、プッシュ通知の提供を主な機能としています。お客様のプライバシーを尊重し、サービス提供に必要な最小限の情報のみを収集することをお約束いたします。</p>
       <div class="callout">
-        <strong>Summary:</strong> The App does not require account registration and does not collect your name, phone number, or email. We only process technical identifiers (push tokens, advertising IDs) strictly necessary for the service.
+        <strong>ポイント:</strong>本アプリではアカウント登録は不要で、お客様の氏名・電話番号・メールアドレスは収集いたしません。サービス提供に必要な範囲で、最小限の技術データ(デバイスのプッシュトークン、広告識別子など)のみを取り扱います。
       </div>
     </section>
 
     <section>
       <span class="section-num">§ 01</span>
-      <h2>Information We Collect</h2>
+      <h2>収集する情報</h2>
 
-      <h3>1.1 Automatically Collected Technical Data</h3>
+      <h3>1.1 自動的に収集される技術データ</h3>
       <table class="data-table">
         <thead>
-          <tr><th>Data Type</th><th>Purpose</th><th>Opt-Out</th></tr>
+          <tr><th>データの種類</th><th>用途</th><th>オプトアウト</th></tr>
         </thead>
         <tbody>
           <tr>
-            <td>Push Token<br><code>APNs Token</code></td>
-            <td>Sending earthquake notifications</td>
-            <td>Yes (disable notifications)</td>
+            <td>プッシュトークン<br><code>APNs Token</code></td>
+            <td>地震通知の配信</td>
+            <td>可能(通知をオフ)</td>
           </tr>
           <tr>
-            <td>Advertising Identifier<br><code>IDFA</code></td>
-            <td>Personalized advertising</td>
-            <td>Yes (decline ATT)</td>
+            <td>広告識別子<br><code>IDFA</code></td>
+            <td>パーソナライズ広告</td>
+            <td>可能(ATTで拒否)</td>
           </tr>
           <tr>
-            <td>Device Model / OS Version</td>
-            <td>Diagnostics & compatibility</td>
-            <td>No (system-provided)</td>
+            <td>デバイス機種 / OSバージョン</td>
+            <td>診断・互換性確認</td>
+            <td>不可(システム提供)</td>
           </tr>
           <tr>
-            <td>App Version</td>
-            <td>Crash diagnostics</td>
-            <td>No</td>
+            <td>アプリバージョン</td>
+            <td>障害診断</td>
+            <td>不可</td>
           </tr>
         </tbody>
       </table>
 
-      <h3>1.2 Information You Provide</h3>
+      <h3>1.2 お客様が提供する情報</h3>
       <ul>
-        <li><strong>Notification Region:</strong> Your selected region for earthquake alerts (e.g., "Taipei", "Tokyo"), stored on your device and our notification server.</li>
-        <li><strong>Notification Threshold:</strong> Your minimum intensity setting (e.g., "Notify at intensity 3 or above").</li>
-        <li><strong>In-App Preferences:</strong> Such as language and dark mode, stored locally only.</li>
+        <li><strong>通知地域:</strong>アプリ内で設定した地震通知の受信地域(例:「台北市」、「東京都」)。お客様のデバイスおよび当方の通知サーバーに保存されます。</li>
+        <li><strong>通知の震度閾値:</strong>設定された最低震度の通知条件(例:「震度3以上のみ通知」)。</li>
+        <li><strong>アプリ内設定:</strong>言語、ダークモードなど。デバイスのローカルにのみ保存され、外部送信は行いません。</li>
       </ul>
 
-      <h3>1.3 Information We Do NOT Collect</h3>
+      <h3>1.3 収集しない情報</h3>
       <ul>
-        <li>Name, phone number, or email address</li>
-        <li>Precise GPS location (this App does not use location services)</li>
-        <li>Contacts, photos, camera, or microphone</li>
-        <li>Browsing history or usage of other applications</li>
+        <li>氏名、電話番号、メールアドレス</li>
+        <li>精密なGPS位置情報(本アプリは位置情報サービスを使用しません)</li>
+        <li>連絡先、写真、カメラ、マイク</li>
+        <li>閲覧履歴や他のアプリの使用状況</li>
       </ul>
     </section>
 
     <section>
       <span class="section-num">§ 02</span>
-      <h2>How We Use Information</h2>
-      <p>We use collected data solely for the following purposes:</p>
+      <h2>情報の利用目的</h2>
+      <p>収集したデータは、以下の目的の範囲内でのみ使用いたします:</p>
       <ul>
-        <li><strong>Earthquake Notifications:</strong> Sending relevant alerts based on your region and threshold settings.</li>
-        <li><strong>Advertising:</strong> Displaying ads via Google AdMob to support free operation of the App.</li>
-        <li><strong>Service Improvement:</strong> Analyzing aggregate usage statistics (anonymized) to improve functionality.</li>
-        <li><strong>Diagnostics:</strong> Technical logs to troubleshoot push or feature issues.</li>
+        <li><strong>地震通知の配信:</strong>お客様の地域および震度閾値の設定に基づき、関連する地震速報を配信します。</li>
+        <li><strong>広告の表示:</strong>本アプリの無料運営を維持するため、Google AdMob を通じて広告を表示します。</li>
+        <li><strong>サービスの改善:</strong>機能改善のため、匿名化された全体的な利用統計を分析します。</li>
+        <li><strong>障害対応:</strong>通知や機能に異常が発生した際、技術ログにより問題の修復を支援します。</li>
       </ul>
-      <p>We <strong>do not</strong> sell your data to third parties, use it for unrelated marketing, or cross-reference it with other databases to identify you.</p>
+      <p>当方は、お客様のデータを<strong>第三者に販売することはありません</strong>。サービスと無関係なマーケティングへの利用、または他のデータベースとの照合によるお客様の身元特定も行いません。</p>
     </section>
 
     <section>
       <span class="section-num">§ 03</span>
-      <h2>Third-Party Services</h2>
-      <p>To deliver the full service, the App integrates the following third-party services, each with its own privacy policy:</p>
+      <h2>第三者サービス</h2>
+      <p>サービスの提供にあたり、本アプリは以下の第三者サービスを利用しています。各サービスはそれぞれ独自のプライバシーポリシーを有しています:</p>
 
-      <h3>3.1 Notifications & Infrastructure</h3>
+      <h3>3.1 通知配信・インフラ</h3>
       <ul>
-        <li><strong>Apple Push Notification Service (APNs):</strong> Delivering push notifications. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a></li>
-        <li><strong>Cloudflare Workers:</strong> Our notification server and configuration service. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare Privacy Policy</a></li>
+        <li><strong>Apple Push Notification Service(APNs):</strong>プッシュ通知の配信。<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple プライバシーポリシー</a></li>
+        <li><strong>Cloudflare Workers:</strong>本アプリの通知サーバーおよび設定サービス。<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare プライバシーポリシー</a></li>
       </ul>
 
-      <h3>3.2 Advertising</h3>
+      <h3>3.2 広告</h3>
       <ul>
-        <li><strong>Google AdMob:</strong> Displays banner ads. AdMob may use data such as IDFA for ad targeting depending on your ATT consent. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+        <li><strong>Google AdMob:</strong>バナー広告の表示。お客様の ATT 同意状況に応じて、IDFA 等のデータを広告配信に使用する場合があります。<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシーポリシー</a></li>
       </ul>
 
-      <h3>3.3 Earthquake Data Sources (Public, no personal data)</h3>
+      <h3>3.3 地震データソース(公開データ、個人情報を含みません)</h3>
       <ul>
-        <li><strong>Central Weather Administration (CWA):</strong> Taiwan earthquake data</li>
-        <li><strong>Japan Meteorological Agency (JMA):</strong> Japan earthquake data</li>
-        <li><strong>P2P Earthquake Information:</strong> Real-time Japanese seismic alerts</li>
-        <li><strong>USGS:</strong> United States Geological Survey global earthquake data</li>
+        <li><strong>中央気象署(CWA):</strong>台湾の地震データ</li>
+        <li><strong>気象庁(JMA):</strong>日本の地震データ</li>
+        <li><strong>P2P地震情報:</strong>日本のリアルタイム地震速報</li>
+        <li><strong>USGS:</strong>アメリカ地質調査所による世界の地震データ</li>
       </ul>
     </section>
 
     <section>
       <span class="section-num">§ 04</span>
-      <h2>Data Storage & Retention</h2>
+      <h2>データの保管・保持</h2>
       <ul>
-        <li><strong>Push Tokens:</strong> Stored in Cloudflare KV; automatically purged within 30 days after uninstallation or notification opt-out.</li>
-        <li><strong>In-App Settings:</strong> Stored locally on your device; cleared upon uninstallation.</li>
-        <li><strong>Advertising Cache:</strong> Managed by Google AdMob according to their retention policies.</li>
+        <li><strong>プッシュトークン:</strong>Cloudflare KV データベースに保管され、アプリのアンインストールまたは通知のオフ後、30 日以内に自動的に削除されます。</li>
+        <li><strong>アプリ内設定:</strong>お客様のデバイスのローカルに保管され、デバイス外には送信されません。アンインストール時に削除されます。</li>
+        <li><strong>広告キャッシュ:</strong>Google AdMob により管理され、同社のデータ保持規定に従います。</li>
       </ul>
     </section>
 
     <section>
       <span class="section-num">§ 05</span>
-      <h2>Children's Privacy</h2>
-      <p>The App does not knowingly collect personal information from children under 13. The App is designed for general audiences and contains no content specifically targeting children. If a guardian has concerns, please contact us via the email below.</p>
+      <h2>お子様のプライバシー</h2>
+      <p>本アプリでは、13 歳未満のお子様の個人情報を意図的に収集することはありません。本アプリは一般のお客様向けの情報アプリとして設計されており、お子様を特に対象としたコンテンツは含まれておりません。保護者の方でご懸念がある場合は、下記の連絡先までお問い合わせください。</p>
     </section>
 
     <section>
       <span class="section-num">§ 06</span>
-      <h2>Your Rights</h2>
+      <h2>お客様の権利</h2>
       <ul>
-        <li><strong>Decline Ad Tracking:</strong> Disable "Allow Tracking" for the App in iOS Settings; AdMob will switch to non-personalized ads.</li>
-        <li><strong>Disable Notifications:</strong> Turn off notifications for the App in iOS Settings; your push token will be invalidated within 30 days.</li>
-        <li><strong>Remove All Data:</strong> Uninstall the App to clear all locally stored settings and caches.</li>
-        <li><strong>Access & Deletion Requests:</strong> If you wish to query or delete data we store, please contact us via the email below; we will respond within 30 days.</li>
+        <li><strong>広告トラッキングの拒否:</strong>iOS の設定で本アプリの「トラッキングを許可」をオフにすると、AdMob はパーソナライズされていない広告に切り替わります。</li>
+        <li><strong>プッシュ通知の停止:</strong>iOS の設定で本アプリの通知をオフにすると、お客様のプッシュトークンは 30 日以内に自動的に無効化されます。</li>
+        <li><strong>すべてのデータの削除:</strong>本アプリをアンインストールすることで、ローカルに保存されたすべての設定およびキャッシュが削除されます。</li>
+        <li><strong>データ照会・削除のリクエスト:</strong>当方が保管しているデータの照会または削除をご希望の場合、下記のメールアドレスまでご連絡ください。30 日以内にご回答いたします。</li>
       </ul>
     </section>
 
     <section>
       <span class="section-num">§ 07</span>
-      <h2>Policy Changes</h2>
-      <p>When this policy is materially updated, we will publish the changes on this page and update the "Last Updated" date. We recommend reviewing this page periodically. Significant changes (such as new categories of data collection) will be prominently announced within the App.</p>
+      <h2>ポリシーの変更</h2>
+      <p>本ポリシーに重要な変更がある場合、当ページにて告知し、「最終更新日」を更新いたします。最新の内容を把握するため、当ページを定期的にご確認いただくことをお勧めします。重要な変更(新たなデータ収集項目の追加など)は、アプリ内でも目立つ形でお知らせいたします。</p>
     </section>
 
     <section>
       <span class="section-num">§ 08</span>
-      <h2>Contact Us</h2>
-      <p>For any questions regarding this policy, our data practices, or your rights, please contact us at:</p>
+      <h2>お問い合わせ</h2>
+      <p>本ポリシー、データの取り扱い、またはお客様の権利についてご質問がある場合は、以下の方法でお気軽にお問い合わせください:</p>
       <ul>
-        <li><strong>Email:</strong> <a href="mailto:[Please fill in your contact email]">[Please fill in your contact email]</a></li>
+        <li><strong>メールアドレス:</strong><a href="mailto:[ご連絡先メールアドレスをご記入ください]">[ご連絡先メールアドレスをご記入ください]</a></li>
       </ul>
     </section>
 
@@ -718,33 +734,48 @@
 
   <footer>
     <span class="ornament">§</span>
-    隱私權政策 / Privacy Policy
+    隱私權政策 / プライバシーポリシー
     <span class="ornament">§</span>
     <br>
-    台日地震監測 — Taiwan-Japan Earthquake Monitor
+    台日地震監測 — 台日地震監視
   </footer>
 
 </div>
 
 <script>
-  // 語言切換
+  // 標題副標的對應(切換語言時主副標互換)
+  const titleMap = {
+    'zh-Hant': { primary: '隱私權政策', alt: 'プライバシーポリシー' },
+    'ja':      { primary: 'プライバシーポリシー', alt: '隱私權政策' }
+  };
+
   const buttons = document.querySelectorAll('.lang-toggle button');
   const articles = document.querySelectorAll('article');
+  const primaryTitle = document.querySelector('.primary-title');
+  const altTitle = document.getElementById('altTitle');
+
+  function setLang(lang){
+    buttons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    articles.forEach(a => a.classList.toggle('active', a.lang === lang));
+    document.documentElement.lang = lang;
+    document.body.dataset.lang = lang;
+    if(titleMap[lang]){
+      primaryTitle.textContent = titleMap[lang].primary;
+      altTitle.textContent = titleMap[lang].alt;
+    }
+  }
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const lang = btn.dataset.lang;
-      buttons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
-      articles.forEach(a => a.classList.toggle('active', a.lang === lang));
-      document.documentElement.lang = lang;
+      setLang(btn.dataset.lang);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 
-  // 從瀏覽器語言自動切換
+  // 從瀏覽器語言自動切換(日文用戶看到日文)
   const userLang = (navigator.language || 'zh-Hant').toLowerCase();
-  if (userLang.startsWith('en')) {
-    document.querySelector('[data-lang="en"]').click();
+  if (userLang.startsWith('ja')) {
+    setLang('ja');
   }
 </script>
 
