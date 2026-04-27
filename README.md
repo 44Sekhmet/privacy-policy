@@ -7,11 +7,11 @@
 ---
 
 ## 🌐 公開 URL / 公開 URL
+GitHub Pages 啟用後,政策頁將可透過以下網址公開瀏覽。
+GitHub Pages を有効化後、ポリシーページは以下の URL で公開されます。
 
-GitHub Pages 啟用後,政策頁將可透過以下網址公開瀏覽:
 
-GitHub Pages を有効化後、ポリシーページは以下の URL で公開されます:
-
+## 台日地震監測：
 ```
 https://44sekhmet.github.io/privacy-policy/tjrem_privacy.html
 ```
