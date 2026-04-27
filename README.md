@@ -1,4 +1,4 @@
-# Privacy Policy — 台日地震監測 / 台日地震監視
+# Privacy Policy — 台日地震監測
 
 > 🇹🇼 本 repo 託管「台日地震監測」iOS App 的隱私權政策頁面。
 >
